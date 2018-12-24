@@ -1,4 +1,4 @@
-#!/bin/env bash -ex
+#!/bin/bash
 cd build
 mkdir -p Mods_publish
 cd Mods
@@ -39,7 +39,7 @@ do
 		python ../../.travis/addnewrelease.py ${HOME}/.taiwu/${modname}.json "${modname}" "${modversion}" "${modurl}"
 		
 		\cp -Rf ${modzip} ${HOME}/.taiwu/Mods_publish/ | true
-		\cp -Rf  ${HOME}/.taiwu/${modname}.json ${HOME}/.taiwu/Mods_publish/ | true
+		#\cp -Rf  ${HOME}/.taiwu/${modname}.json ${HOME}/.taiwu/Mods_publish/ | true
 		echo "Published Mod  ${modfullname} to Github Release page, Release tag : ${COMM_TAG}"
 	fi
 	\cp -Rf ${modzip} ../Mods_publish/ | true

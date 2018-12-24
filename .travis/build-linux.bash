@@ -1,12 +1,12 @@
-#!/bin/env bash -ex
+#!/bin/bash
 shopt -s nocasematch
 
-cd /build/Taiwu_Mods
+cd /data/Taiwu_mods
 
 # Download pre-compiled llvm libs
-echo "downloading dep dll packs...."
-curl -sLO https://github.com/phorcys/Taiwu_mods/releases/download/dll181223/dlls-181223.zip
-unzip ./dlls-181127.zip -d ..
+#echo "downloading dep dll packs...."
+#curl -sLO https://github.com/phorcys/Taiwu_mods/releases/download/dll181223/dlls-181223.zip
+#unzip ./dlls-181127.zip -d ..
 
 
 mkdir -p build ; cd build
@@ -21,5 +21,5 @@ cd ..
 
 # If it compiled succesfully let's deploy
 echo "build finished , result : $? , TRAVIS_BRANCH $TRAVIS_BRANCH , TRAVIS_PULL_REQUEST $TRAVIS_PULL_REQUEST"
-/bin/bash -ex .travis/deploy-linux.bash
+/bin/bash .travis/deploy-linux.bash
 
