@@ -41,11 +41,11 @@ namespace Sth4nothing.UseStorageBook
         private static List<int> GetBooks()
         {
             var actorItems =
-                from item in ActorMenu.instance.GetActorItems(DateFile.instance.mianActorId, 0).Keys
+                from item in ActorMenu.instance.GetActorItems(DateFile.instance.mianActorId, 0, false).Keys
                 where int.Parse(DateFile.instance.GetItemDate(item, 31, true)) == HomeSystem.instance.studySkillTyp
                 select item;
             var warehouseItems =
-                from item in ActorMenu.instance.GetActorItems(-999, 0).Keys
+                from item in ActorMenu.instance.GetActorItems(-999, 0, false).Keys
                 where int.Parse(DateFile.instance.GetItemDate(item, 31, true)) == HomeSystem.instance.studySkillTyp
                 select item;
             var items = actorItems.Concat(warehouseItems);

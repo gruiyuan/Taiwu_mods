@@ -90,11 +90,12 @@ namespace UseStorageMaterial
             {
                 var injectedCodes = new List<CodeInstruction>();
 
-                // 注入 IL code  等效代码  list.AddRange(ActorMenu.instance.GetActorItems(-999, 0).Keys);
+                // 注入 IL code  等效代码  list.AddRange(ActorMenu.instance.GetActorItems(-999, 0, false).Keys);
                 // 
                 injectedCodes.Add(new CodeInstruction(OpCodes.Ldloc_1 ));
                 injectedCodes.Add(new CodeInstruction(OpCodes.Ldsfld, typeof(ActorMenu).GetField("instance")));
                 injectedCodes.Add(new CodeInstruction(OpCodes.Ldc_I4, -999));
+                injectedCodes.Add(new CodeInstruction(OpCodes.Ldc_I4_0));
                 injectedCodes.Add(new CodeInstruction(OpCodes.Ldc_I4_0));
                 injectedCodes.Add(new CodeInstruction(OpCodes.Callvirt, typeof(ActorMenu).GetMethod("GetActorItems")));
                 injectedCodes.Add(new CodeInstruction(OpCodes.Callvirt, typeof(Dictionary<int, int>).GetMethod("get_Keys")));
