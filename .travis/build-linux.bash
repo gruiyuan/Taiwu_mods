@@ -1,13 +1,11 @@
 #!/bin/bash
-
 #DLLPACK_VERSION="181226"
-
 shopt -s nocasematch
 
-cd /data/Taiwu_mods
+cd /build/Taiwu_mods
 
 
-# Download pre-compiled llvm libs
+## Download pre-compiled llvm libs
 #echo "downloading dep dll packs...."
 #curl -sLO https://github.com/phorcys/Taiwu_mods/releases/download/dll${DLLPACK_VERSION}/dlls-${DLLPACK_VERSION}.zip
 #unzip ./dlls-${DLLPACK_VERSION}.zip -d ..
