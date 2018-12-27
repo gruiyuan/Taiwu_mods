@@ -2,7 +2,7 @@
 #DLLPACK_VERSION="181226"
 shopt -s nocasematch
 
-cd /build/Taiwu_mods
+cd /data/Taiwu_mods
 
 
 ## Download pre-compiled llvm libs
