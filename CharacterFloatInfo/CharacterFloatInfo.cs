@@ -614,6 +614,7 @@ namespace CharacterFloatInfo
                 if (GetAge(id) > ConstValue.actorMinAge)
                     text += string.Format("\t\t子嗣:<color=white>{0}</color>", DateFile.instance.GetActorSocial(id, 310, false, false).Count);    // todo: 改為顯示所有孩子名
 
+                text += string.Format("\t\t银钱:<color=yellow>{0}</color>", int.Parse(DateFile.instance.GetActorDate(id, 406, false)));
                 text += string.Format("\t\t威望:<color=white>{0}</color>", int.Parse(DateFile.instance.GetActorDate(id, 407, false)));
             }
             else if (windowType == WindowType.BuildingWindow)
